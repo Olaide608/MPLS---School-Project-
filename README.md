@@ -5,15 +5,18 @@ This project demonstrates the operation of a basic MPLS network within an ISP co
 
 
 
+## TOPOLOGY DIAGRAM
+
+
+![](https://github.com/Olaide608/MPLS---School-Project-/blob/main/MPLS%20Topology%20Diagram.png)
+
 ## WORKING MECHANISM
 
 1. When Provider Edge 1 (PE1/R1) receives an unlabeled IP packet from Customer Edge 1 (CE1/R5) destined for Customer Edge 2 (CE2/R6), it performs a lookup in the Cisco Express Forwarding (CEF) table. R1 then imposes two labels: an inner VPN label (104, check the MPLS Configuration section to confirm) and an outer Transport label (203). R1 functions as the Ingress Label Switched Router (LSR)
 2. Upon arrival of the labeled packet (outer label 203) at R2's incoming interface, the Label Forwarding Information Base (LFIB) is consulted. The LFIB dictates a Label Swap operation, providing the outgoing interface (eth0/1) and a new outgoing label (302) for the packet.
 3. R3, acting as the penultimate hop, receives the packet (outer label 302). It then performs Penultimate Hop Popping (PHP) by removing the outer Transport label (302) and transmits the packet with only the inner VPN label remaining. The final router, the Egress LSR (R4), receives the packet, removes the inner label, and transmits the original unlabeled IP packet to Customer Edge 2 (CE2/R6).
-## TOPOLOGY DIAGRAM
 
 
-![](https://github.com/Olaide608/MPLS---School-Project-/blob/main/MPLS%20Topology%20Diagram.png)
 ## IP ADDRESSING SCHEME
 
 | Routers | Interfaces | Addresses |
