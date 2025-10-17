@@ -1,5 +1,5 @@
 
-# MPLS PRACTICE - SCHOOL PROJECT
+# MPLS PRACTICE USING GNS3 - SCHOOL PROJECT
 
 This project demonstrates the operation of a basic MPLS network within an ISP core, utilizing OSPF as the IGP, an IBGP full-mesh setup between the Provider Edge (PE) routers, and EBGP connections between the Customer Edge (CE) routers. The topology consists of four routers (R1–R4) representing the ISP core (Label Switch Routers) and two routers (R5 and R6) representing customers in different autonomous systems. Follow along as I walk you through how it all works.
 
